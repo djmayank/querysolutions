@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Iocl</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+
+<% if notice %>
+<script type="text/javascript" src ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+
+noty({text: '<%= notice %>', type: 'alert', timeout: 1200,maxVisible: 5, theme: 'defaultTheme',template: '<div class="noty_message"><span class="noty_text"></span><div class="noty_close"></div></div>',
+progressBar: true});
+	
+</script>
+
+<% end %>
+
+
+<% if alert %>
+
+
+<script type="text/javascript">
+noty({text: '<%= alert %>', type: 'error', timeout: 1200, theme: 'defaultTheme',maxVisible: 5,template: '<div class="noty_message"><span class="noty_text"></span><div class="noty_close"></div></div>',
+progressBar: true,modal:true});
+</script>
+<% end %>
+
+
+
+
+
+
+<%= yield %>
+
+</body>
+</html>
