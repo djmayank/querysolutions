@@ -68,7 +68,7 @@
 
 <!-- ################################################################### members ###################################################################-->
 
-<% if User.posts[current_user.post] == 1%>
+<% if current_user == question.user && User.posts[current_user.post] == 1%>
 
 <div class="question">
   <div class="left">
@@ -330,6 +330,73 @@
 
 
 
+
+<!-- ################################################################### Extra case ###################################################################-->
+<% if current_user == question.user && (User.posts[current_user.post] == 0 || User.posts[current_user.post] == 2 || User.posts[current_user.post] == 3 || User.posts[current_user.post] == 4)%>
+
+<div class="question">
+  <div class="left">
+    <div class="userImage">
+    </div>
+  </div>
+
+  <div class="right">
+
+
+
+    <B>
+    <div class="userDetail">
+    <%= question.user.email %>
+    </div></B>
+
+    <font size="2px" color="grey">
+    asked 
+      <% if question.created_at > Time.now.beginning_of_day %>
+    <%="#{time_ago_in_words(question.created_at)} ago"%>
+     <% else %>
+    <%= question.created_at.strftime("%b %d, %Y") %>  
+     <% end %>
+
+    </font>
+     <b>
+
+    <div class="content">
+      <%= question.content %>
+    </div>
+
+    <div class= "category">
+      <%= question.category %>
+    </div>
+
+     </b>
+    <br>
+       
+    <%= form_for @answer, remote: true do |f|%>
+    
+    <%= f.text_area :content ,placeholder: "Write your answer", :class => 'a2', required: true%> <br>
+
+    <%= f.hidden_field :question_id , :value => question.id %>
+
+    <%= f.submit value:"Answer" ,:class => 'button1' ,id: 'create_answer_submit'%>
+      <%end%>
+      <br>
+
+
+
+
+    <div id="answer_<%=question.id%>">
+
+    <% @answer_feed.each do |a| %>
+    <%= render 'answer',question_id: question.id,a: a %>
+    <% end %>
+
+    </div>
+  </div>
+</div>
+
+<br>
+
+<%end%>
 
 
 

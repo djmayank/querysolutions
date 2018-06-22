@@ -19,6 +19,7 @@ gem 'devise'
 
 gem 'devise-bootstrap-views'
 
+gem 'readmorejs-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
