@@ -42,6 +42,29 @@
 
 
 
+  
+      <%= form_for @answer, remote: true do |f|%>
+    
+    <%= f.text_area :content ,placeholder: "Write your answer", :class => 'a2', required: true%> <br>
+
+    <%= f.hidden_field :question_id , :value => question.id %>
+
+    <%= f.submit value:"Answer" ,:class => 'button1' ,id: 'create_answer_submit'%>
+      <%end%>
+      <br>
+
+
+
+
+    <div id="answer_<%=question.id%>">
+
+    <% @answer_feed.each do |a| %>
+<%= render 'answer',question_id: question.id,a: a %>
+<% end %>
+
+</div>
+
+
 
 
 

@@ -3,6 +3,8 @@ class HomeController < ApplicationController
   def index
   	
   	@question = Question.new
-  	@question_feed = Question.all.order(created_at: :desc); 
+  	@question_feed = Question.all.order(created_at: :desc);
+  	@answer = Answer.new
+  	@answer_feed = Answer.all.order(created_at: :desc);
   end
 end
