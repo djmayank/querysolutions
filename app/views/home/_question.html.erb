@@ -25,6 +25,16 @@
     <%= question.created_at.strftime("%b %d, %Y") %>  
      <% end %>
 
+
+
+    <% if question.answers.length != 0 %>
+      <%= "Solved" %>
+    <% elsif question.answers.length == 0 %>
+      <%= "Unsolved" %>
+    <% end %>
+
+      
+
     </font>
      <b>
 
@@ -93,6 +103,16 @@
     <%= question.created_at.strftime("%b %d, %Y") %>  
      <% end %>
 
+
+     <% if question.answers.length != 0 %>
+      <%= "Solved" %>
+    <% elsif question.answers.length == 0 %>
+      <%= "Unsolved" %>
+    <% end %>
+
+
+
+
     </font>
      <b>
 
@@ -148,6 +168,18 @@
      <% else %>
     <%= question.created_at.strftime("%b %d, %Y") %>  
      <% end %>
+
+
+
+
+
+    <% if question.answers.length != 0 %>
+      <%= "Solved" %>
+    <% elsif question.answers.length == 0 %>
+      <%= "Unsolved" %>
+    <% end %>
+
+
 
     </font>
      <b>
@@ -217,6 +249,16 @@
     <%= question.created_at.strftime("%b %d, %Y") %>  
      <% end %>
 
+
+
+
+    <% if question.answers.length != 0 %>
+      <%= "Solved" %>
+    <% elsif question.answers.length == 0 %>
+      <%= "Unsolved" %>
+    <% end %>
+
+
     </font>
      <b>
 
@@ -284,6 +326,16 @@
      <% else %>
     <%= question.created_at.strftime("%b %d, %Y") %>  
      <% end %>
+
+
+
+<% if question.answers.length != 0 %>
+      <%= "Solved" %>
+    <% elsif question.answers.length == 0 %>
+      <%= "Unsolved" %>
+    <% end %>
+
+
 
     </font>
      <b>
@@ -356,6 +408,17 @@
      <% else %>
     <%= question.created_at.strftime("%b %d, %Y") %>  
      <% end %>
+
+
+
+<% if question.answers.length != 0 %>
+      <%= "Solved" %>
+    <% elsif question.answers.length == 0 %>
+      <%= "Unsolved" %>
+    <% end %>
+
+
+
 
     </font>
      <b>
