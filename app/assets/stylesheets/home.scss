@@ -43,6 +43,63 @@ header{
 
 
 
+div#questions{
+            div.question{
+                border:2px solid #efefef ;
+                display: flex;
+               
+        width: 40%;
+                background-color: white;
+               box-shadow: 1px 1px 0 #f7f7f7;
+                padding: 12px;
+               margin-left: 400px;
+
+               
+          height: auto;
+          word-break: break-word;
+    
+          
+
+
+                div.left{
+
+                    width: 50px;
+                    div.userImage{
+                        width: 45px;
+                        height: 45px;
+                        border-radius: 50px;
+                        background-image:url('http://www.freeiconspng.com/uploads/account-icon-5.jpg');
+                        -webkit-background-size: cover;
+                        -moz-background-size: cover;
+                        -o-background-size: cover;
+    
+                        background-repeat: no-repeat;
+                        
+                        background-position: center;
+                 
+                       img{
+                        height: 45px;
+                        width: 45px;
+                        border-radius: 20px;
+                        }
+                        
+                    }
+                }
+                div.right{
+                  
+                  margin-left:4px;
+                    flex-grow:1;
+                    div.userDetail{
+                      
+                      margin-top:1px;
+
+                    }
+                }
+            }
+}
+
+
+
 
 main{
   div.sidebar{
