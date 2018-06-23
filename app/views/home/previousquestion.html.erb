@@ -2,18 +2,7 @@
 <!-- ###################################################################solver 1###################################################################-->
 <% if User.posts[current_user.post] == 0 && question.category == 1 %>
 
-<% if question.answers.length != 0 %>
-
-<div class="question solved1">
-
-  <%end%>
-
-
-<% if question.answers.length == 0 %>
-
-<div class="question unsolved1">
-
-<%end%>
+<div class="question">
   <div class="left">
     <div class="userImage">
     </div>
@@ -39,13 +28,35 @@
 
 
     <% if question.answers.length != 0 %>
-      <div class="normal"><%= "STATUS: Solved" %></div>
-
-
+      <%= "Solved" %>
     <% elsif question.answers.length == 0 %>
-      <div class="active"><%= "STATUS: Unsolved" %></div>
+      <%= "Unsolved" %>
     <% end %>
 
+
+
+
+
+     <% if question.answers.length == 0 %>
+     <style type="text/css">
+       .question{
+          border: 3px solid #b30000;
+       }
+     </style>
+
+     <% end%>
+
+
+
+
+     <% if question.answers.length != 0 %>
+     <style type="text/css">
+       .question{
+          border: 3px solid #63ea11;
+       }
+     </style>
+
+     <% end%>
 
 
 
@@ -95,18 +106,7 @@
 
 <% if current_user == question.user && User.posts[current_user.post] == 1%>
 
-<% if question.answers.length != 0 %>
-
-<div class="question solved1">
-
-  <%end%>
-
-
-<% if question.answers.length == 0 %>
-
-<div class="question unsolved1">
-
-<%end%>
+<div class="question">
   <div class="left">
     <div class="userImage">
     </div>
@@ -130,13 +130,33 @@
      <% end %>
 
 
-    <% if question.answers.length != 0 %>
-      <div class="normal"><%= "STATUS: Solved" %></div>
-
-
+     <% if question.answers.length != 0 %>
+      <%= "Solved" %>
     <% elsif question.answers.length == 0 %>
-      <div class="active"><%= "STATUS: Unsolved" %></div>
+      <%= "Unsolved" %>
     <% end %>
+
+    
+      <% if question.answers.length == 0 %>
+     <style type="text/css">
+       .question{
+          border: 3px solid #b30000;
+       }
+     </style>
+
+     <% end%>
+
+
+
+
+     <% if question.answers.length != 0 %>
+     <style type="text/css">
+       .question{
+          border: 3px solid #63ea11;
+       }
+     </style>
+
+     <% end%>
 
 
     </font>
@@ -172,18 +192,7 @@
 <!-- ###################################################################solver 2###################################################################-->
 <% if User.posts[current_user.post] == 2 && question.category == 2 %>
 
-<% if question.answers.length != 0 %>
-
-<div class="question solved1">
-
-  <%end%>
-
-
-<% if question.answers.length == 0 %>
-
-<div class="question unsolved1">
-
-<%end%>
+<div class="question">
   <div class="left">
     <div class="userImage">
     </div>
@@ -209,14 +218,37 @@
 
 
 
-<% if question.answers.length != 0 %>
-      <div class="normal"><%= "STATUS: Solved" %></div>
 
-
+    <% if question.answers.length != 0 %>
+      <%= "Solved" %>
     <% elsif question.answers.length == 0 %>
-      <div class="active"><%= "STATUS: Unsolved" %></div>
+      <%= "Unsolved" %>
     <% end %>
 
+
+
+
+
+      <% if question.answers.length == 0 %>
+     <style type="text/css">
+       .question{
+          border: 3px solid #b30000;
+       }
+     </style>
+
+     <% end%>
+
+
+
+
+     <% if question.answers.length != 0 %>
+     <style type="text/css">
+       .question{
+          border: 3px solid #63ea11;
+       }
+     </style>
+
+     <% end%>
 
 
     </font>
@@ -264,18 +296,7 @@
 <!-- ###################################################################solver 3###################################################################-->
 <% if User.posts[current_user.post] == 3 && question.category == 3 %>
 
-<% if question.answers.length != 0 %>
-
-<div class="question solved1">
-
-  <%end%>
-
-
-<% if question.answers.length == 0 %>
-
-<div class="question unsolved1">
-
-<%end%>
+<div class="question">
   <div class="left">
     <div class="userImage">
     </div>
@@ -302,12 +323,36 @@
 
 
     <% if question.answers.length != 0 %>
-      <div class="normal"><%= "STATUS: Solved" %></div>
-
-
+      <%= "Solved" %>
     <% elsif question.answers.length == 0 %>
-      <div class="active"><%= "STATUS: Unsolved" %></div>
+      <%= "Unsolved" %>
     <% end %>
+
+
+
+
+
+
+      <% if question.answers.length == 0 %>
+     <style type="text/css">
+       .question{
+          border: 3px solid #b30000;
+       }
+     </style>
+
+     <% end%>
+
+
+
+
+     <% if question.answers.length != 0 %>
+     <style type="text/css">
+       .question{
+          border: 3px solid #63ea11;
+       }
+     </style>
+
+     <% end%>
 
 
 
@@ -356,20 +401,7 @@
 <!-- ###################################################################solver 4###################################################################-->
 <% if User.posts[current_user.post] == 4 && question.category == 4 %>
 
-
-<% if question.answers.length != 0 %>
-
-<div class="question solved1">
-
-  <%end%>
-
-
-<% if question.answers.length == 0 %>
-
-<div class="question unsolved1">
-
-<%end%>
-
+<div class="question">
   <div class="left">
     <div class="userImage">
     </div>
@@ -394,19 +426,32 @@
 
 
 
-
-    <% if question.answers.length != 0 %>
-      <div class="normal"><%= "STATUS: Solved" %></div>
-
-
+<% if question.answers.length != 0 %>
+      <%= "Solved" %>
     <% elsif question.answers.length == 0 %>
-      <div class="active"><%= "STATUS: Unsolved" %></div>
+      <%= "Unsolved" %>
     <% end %>
 
 
 
+      <% if question.answers.length == 0 %>
+     <style type="text/css">
+       .question{
+          border: 3px solid #b30000;
+       }
+     </style>
+
+     <% end%>
 
 
+     <% if question.answers.length != 0 %>
+     <style type="text/css">
+       .question{
+          border: 3px solid #63ea11;
+       }
+     </style>
+
+     <% end%>
 
 
     </font>
@@ -458,18 +503,7 @@
 <!-- ################################################################### Extra case ###################################################################-->
 <% if current_user == question.user && (User.posts[current_user.post] == 0 || User.posts[current_user.post] == 2 || User.posts[current_user.post] == 3 || User.posts[current_user.post] == 4)%>
 
-<% if question.answers.length != 0 %>
-
-<div class="question solved1">
-
-  <%end%>
-
-
-<% if question.answers.length == 0 %>
-
-<div class="question unsolved1">
-
-<%end%>
+<div class="question">
   <div class="left">
     <div class="userImage">
     </div>
@@ -494,14 +528,35 @@
 
 
 
-
-    <% if question.answers.length != 0 %>
-      <div class="normal"><%= "STATUS: Solved" %></div>
-
-
+<% if question.answers.length != 0 %>
+      <%= "Solved" %>
     <% elsif question.answers.length == 0 %>
-      <div class="active"><%= "STATUS: Unsolved" %></div>
+      <%= "Unsolved" %>
     <% end %>
+
+
+
+
+      <% if question.answers.length == 0 %>
+     <style type="text/css">
+       .question{
+          border: 3px solid #b30000;
+       }
+     </style>
+
+     <% end%>
+
+
+
+
+     <% if question.answers.length != 0 %>
+     <style type="text/css">
+       .question{
+          border: 3px solid #63ea11;
+       }
+     </style>
+
+     <% end%>
 
 
     </font>
@@ -790,21 +845,7 @@ li.hello2{
                     }
 
 
-.normal {
-  color: #63ea11;
-}
-.active {
-  color: #b30000;
-  
-}
 
-.question.unsolved1{
-  border: 3px solid #b30000;
-}
-
-.question.solved1{
-  border: 3px solid #63ea11;
-}
 
 
 </style>
