@@ -3,7 +3,8 @@
 <% if User.posts[current_user.post] == 0 && question.category == 1 %>
 
 <% if question.answers.length != 0 %>
-
+ <% question.status = 1 %>
+      <%question.save%>
 <div class="question solved1">
 
   <%end%>
@@ -96,7 +97,8 @@
 <% if current_user == question.user && User.posts[current_user.post] == 1%>
 
 <% if question.answers.length != 0 %>
-
+ <% question.status = 1 %>
+      <%question.save%>
 <div class="question solved1">
 
   <%end%>
@@ -173,7 +175,8 @@
 <% if User.posts[current_user.post] == 2 && question.category == 2 %>
 
 <% if question.answers.length != 0 %>
-
+ <% question.status = 1 %>
+      <%question.save%>
 <div class="question solved1">
 
   <%end%>
@@ -265,7 +268,8 @@
 <% if User.posts[current_user.post] == 3 && question.category == 3 %>
 
 <% if question.answers.length != 0 %>
-
+ <% question.status = 1 %>
+      <%question.save%>
 <div class="question solved1">
 
   <%end%>
@@ -358,7 +362,8 @@
 
 
 <% if question.answers.length != 0 %>
-
+ <% question.status = 1 %>
+      <%question.save%>
 <div class="question solved1">
 
   <%end%>
@@ -459,7 +464,8 @@
 <% if current_user == question.user && (User.posts[current_user.post] == 0 || User.posts[current_user.post] == 2 || User.posts[current_user.post] == 3 || User.posts[current_user.post] == 4)%>
 
 <% if question.answers.length != 0 %>
-
+ <% question.status = 1 %>
+      <%question.save%>
 <div class="question solved1">
 
   <%end%>

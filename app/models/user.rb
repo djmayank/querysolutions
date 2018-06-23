@@ -8,4 +8,5 @@ has_many :questions, dependent: :destroy
 has_many :answers,   dependent: :destroy
 
 enum post:{ solver1: 0, member:1, solver2: 2, solver3:3, solver4: 4}
+scope :solvers, -> { where(:post => [0,2,3,4])}
 end
