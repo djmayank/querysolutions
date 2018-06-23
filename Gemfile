@@ -21,6 +21,16 @@ gem 'devise-bootstrap-views'
 
 gem 'readmorejs-rails'
 
+gem 'activeadmin'
+
+# Plus integrations with:
+gem 'devise'
+gem 'cancan' # or cancancan
+gem 'draper'
+gem 'pundit'
+
+gem 'active_skin'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
