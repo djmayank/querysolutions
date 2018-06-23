@@ -1,4 +1,13 @@
 
+
+
+
+
+
+
+<% if User.posts[current_user.post] == 1%>
+
+
 <header>
 
 <div class="logo">
@@ -12,7 +21,7 @@
 <nav>
 
 <ul>
-<li> User </li>
+<li>  <%= link_to "Home",home_index_path,method: :get%> </li>
 
 
 <li> <%= link_to "Sign Out",destroy_user_session_path,method: :delete ,data: { confirm: "Are you sure?"}%></li>
@@ -22,6 +31,60 @@
 
 </font>
 </header>
+
+
+<%end%>
+
+
+
+
+
+<% if User.posts[current_user.post] != 1%>
+
+
+<header>
+
+<div class="logo">
+<%= image_tag 'images.png' %>
+</div>
+
+
+
+
+<font color="#9f9f9f" size="7">
+<nav>
+
+<ul>
+<li> <%= link_to "Home",home_index_path,method: :get%> </li>
+<li><%= link_to "My Questions", myquestions_path,method: :get %></li>
+
+<li> <%= link_to "Sign Out",destroy_user_session_path,method: :delete ,data: { confirm: "Are you sure?"}%></li>
+
+</ul>
+</nav>
+
+</font>
+</header>
+
+
+<%end%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <main>
   

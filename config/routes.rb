@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   resources :answers, only: [:create, :destroy]
   resources :questions, only: [:create, :destroy]
   get 'home/index'
+  get '/myquestions' =>'home#myquestions'
   root 'home#index'
+  get '/ajax' =>'home#ajax'
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

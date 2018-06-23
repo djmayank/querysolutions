@@ -49,6 +49,7 @@
      </b>
     <br>
        
+
     <%= form_for @answer, remote: true do |f|%>
     
     <%= f.text_area :content ,placeholder: "Write your answer", :class => 'a2', required: true%> <br>
@@ -433,7 +434,8 @@
 
      </b>
     <br>
-       
+        
+    <%@answer=Answer.new%>
     <%= form_for @answer, remote: true do |f|%>
     
     <%= f.text_area :content ,placeholder: "Write your answer", :class => 'a2', required: true%> <br>
@@ -448,7 +450,8 @@
 
 
     <div id="answer_<%=question.id%>">
-
+    
+     <%@answer_feed=Answer.all.order(created_at: :desc)%>
     <% @answer_feed.each do |a| %>
     <%= render 'answer',question_id: question.id,a: a %>
     <% end %>
