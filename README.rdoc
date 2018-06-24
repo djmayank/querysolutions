@@ -1,28 +1,71 @@
-== README
+# Website **Query solutions** 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Development setup
 
-Things you may want to cover:
+The website is built using [Ruby on Rails](http://weblog.rubyonrails.org/2012/8/9/ann-rails-5-2-0-has-been-released/) 5.2.0.
 
-* Ruby version
+We develop the website in the `master` branch.
 
-* System dependencies
+# How to run the project
 
-* Configuration
+Ensure you have the latest version of Ruby I'm using 2.3.0p0
 
-* Database creation
+    $ ruby -v
+    # ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-darwin16]
 
-* Database initialization
+If you don't have the latest consider installing [rbenv](https://github.com/sstephenson/rbenv/#section_2) and [Ruby build](https://github.com/sstephenson/ruby-build#installation)
 
-* How to run the test suite
+First install [Homebrew](http://mxcl.github.com/homebrew/) to install [ImageMagic](https://github.com/mxcl/homebrew/blob/master/Library/Formula/imagemagick.rb) (if you haven't got it already)
 
-* Services (job queues, cache servers, search engines, etc.)
+Open the terminal and install `bundler`
 
-* Deployment instructions
+    $ gem install bundler
 
-* ...
+    # Successfully installed bundler-1.1.5
+    # 1 gem installed
+    # Installing ri documentation for bundler-1.1.5...
+    # Installing RDoc documentation for bundler-1.1.5...
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Clone the project from Github using this command:
+
+    git clone git://github.com/djmayank/querysolutions.git
+
+Change into the new directory, then run `bundle install` to install al dependencies 
+
+    $ bundle install
+    # Fetching gem metadata from https://rubygems.org/.......
+    # Using rake  
+    # Installing i18n 
+    # Using multi_json 
+    # Installing activesupport 
+    # [... etc ...]
+    # Installing sqlite3 with native extensions 
+    # Installing uglifier  
+    # Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
+    # Post-install message from rdoc:
+    # Depending on your version of ruby, you may need to install ruby rdoc/ri data:
+    # 
+
+## Running in development mode
+
+Run the rake migrations to update your local database
+
+	$ rake db:create
+	$ rake db:migrate
+	$ rake db:seed	
+	
+Then start the rails server with this command:
+
+    $ rails server
+    # => Booting WEBrick
+    # => Rails 4.2.6 application starting in development on  http://localhost:3000
+    # => Run `rails server -h` for more startup options
+    # => Ctrl-C to shutdown server
+      [2018-06-24 22:17:26] INFO  WEBrick 1.3.1
+      [2018-06-24 22:17:26] INFO  ruby 2.3.0 (2015-12-25) [x86_64-darwin16]
+      [2018-06-24 22:17:26] INFO  WEBrick::HTTPServer#start: pid=78715 port=3000
+
+
+    
+Open your web browser at localhost:3000 to view the project
