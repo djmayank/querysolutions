@@ -1,0 +1,21 @@
+noty({text: 'Answer is successfully added!!', type: 'success', timeout: 1500, theme: 'defaultTheme',maxVisible: 5,template: '<div class="noty_message"><span class="noty_text"></span><div class="noty_close"></div></div>',
+progressBar: true});
+
+$('#answer_<%= @answer.question.id %>').prepend("<%= escape_javascript (render 'home/answer',a: @answer, question_id: @answer.question_id)%>");
+
+$('#answer_content.a2').val("");
+
+
+$('#die_<%=@answer.question.id%>').removeClass("unsolved1");
+
+$('#die_<%=@answer.question.id%>').addClass("solved1");
+
+
+console.log("#die_<%=@answer.question.id%>");
+
+
+$('#c_<%=@answer.question.id%>').removeClass("active");
+
+$('#c_<%=@answer.question.id%>').addClass("normal");
+
+console.log("#c_<%=@answer.question.id%>");

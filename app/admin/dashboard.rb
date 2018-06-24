@@ -20,6 +20,24 @@ section "Recent Questions" do
 
 end
 
+
+
+
+section "Recent Users" do
+    table_for User.order("last_sign_in_at desc").limit(5) do
+        column :id
+    column :email
+    column :post
+    column "Created at", :created_at
+    column :last_sign_in_at
+    
+
+    end
+    strong{link_to "View all Users", admin_users_path}
+
+end
+
+
 section "New Users" do
     table_for User.order("created_at desc").limit(5) do
         column :id
@@ -32,11 +50,7 @@ section "New Users" do
     end
     strong{link_to "View all Users", admin_users_path}
 
-
 end
-
-
-
 
 
 

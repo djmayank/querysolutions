@@ -1,0 +1,12 @@
+console.log("here")
+noty({text: 'Question is successfully added!!', type: 'success', timeout: 1500, theme: 'defaultTheme',maxVisible: 5,template: '<div class="noty_message"><span class="noty_text"></span><div class="noty_close"></div></div>',
+progressBar: true});
+
+$('#questions').prepend("<%= escape_javascript (render 'home/question', question: @question)%>");
+
+$('#question_content').val("");
+
+$('#question_category').val(" ");
+
+var modal = document.getElementById('myModal');
+modal.style.display = "none";

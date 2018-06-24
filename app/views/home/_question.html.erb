@@ -5,14 +5,14 @@
 <% if question.answers.length != 0 %>
  <% question.status = 1 %>
       <%question.save%>
-<div class="question solved1">
+<div class="question solved1" id= "die_<%=question.id%>">
 
   <%end%>
 
 
 <% if question.answers.length == 0 %>
 
-<div class="question unsolved1">
+<div class="question unsolved1" id= "die_<%=question.id%>">
 
 <%end%>
   <div class="left">
@@ -40,11 +40,11 @@
 
 
     <% if question.answers.length != 0 %>
-      <div class="normal"><%= "STATUS: Solved" %></div>
+      <div class="normal" id="c_<%=question.id%>"><%= "STATUS: Solved" %></div>
 
 
     <% elsif question.answers.length == 0 %>
-      <div class="active"><%= "STATUS: Unsolved" %></div>
+      <div class="active" id="c_<%=question.id%>"><%= "STATUS: Unsolved" %></div>
     <% end %>
 
 
@@ -63,7 +63,8 @@
 
      </b>
     <br>
-       
+        <%@answer=Answer.new%>
+
 
     <%= form_for @answer, remote: true do |f|%>
     
@@ -79,9 +80,9 @@
 
 
     <div id="answer_<%=question.id%>">
-
+ <%@answer_feed=Answer.all.order(created_at: :desc)%>
     <% @answer_feed.each do |a| %>
-    <%= render 'answer',question_id: question.id,a: a %>
+    <%= render 'home/answer',question_id: question.id,a: a %>
     <% end %>
 
     </div>
@@ -99,14 +100,14 @@
 <% if question.answers.length != 0 %>
  <% question.status = 1 %>
       <%question.save%>
-<div class="question solved1">
+<div class="question solved1" id= "die_<%=question.id%>">
 
   <%end%>
 
 
 <% if question.answers.length == 0 %>
 
-<div class="question unsolved1">
+<div class="question unsolved1" id= "die_<%=question.id%>">
 
 <%end%>
   <div class="left">
@@ -133,11 +134,11 @@
 
 
     <% if question.answers.length != 0 %>
-      <div class="normal"><%= "STATUS: Solved" %></div>
+      <div class="normal" id="c_<%=question.id%>"><%= "STATUS: Solved" %></div>
 
 
     <% elsif question.answers.length == 0 %>
-      <div class="active"><%= "STATUS: Unsolved" %></div>
+      <div class="active" id="c_<%=question.id%>"><%= "STATUS: Unsolved" %></div>
     <% end %>
 
 
@@ -156,9 +157,9 @@
     <br>
 
     <div id="answer_<%=question.id%>">
-
+      <%@answer_feed=Answer.all.order(created_at: :desc)%>
     <% @answer_feed.each do |a| %>
-    <%= render 'answer',question_id: question.id,a: a %>
+    <%= render 'home/answer',question_id: question.id,a: a %>
     <% end %>
 
     </div>
@@ -177,14 +178,14 @@
 <% if question.answers.length != 0 %>
  <% question.status = 1 %>
       <%question.save%>
-<div class="question solved1">
+<div class="question solved1" id= "die_<%=question.id%>">
 
   <%end%>
 
 
 <% if question.answers.length == 0 %>
 
-<div class="question unsolved1">
+<div class="question unsolved1" id= "die_<%=question.id%>">
 
 <%end%>
   <div class="left">
@@ -213,11 +214,11 @@
 
 
 <% if question.answers.length != 0 %>
-      <div class="normal"><%= "STATUS: Solved" %></div>
+      <div class="normal" id="c_<%=question.id%>"><%= "STATUS: Solved" %></div>
 
 
     <% elsif question.answers.length == 0 %>
-      <div class="active"><%= "STATUS: Unsolved" %></div>
+      <div class="active" id="c_<%=question.id%>"><%= "STATUS: Unsolved" %></div>
     <% end %>
 
 
@@ -235,7 +236,8 @@
 
      </b>
     <br>
-       
+        <%@answer=Answer.new%>
+
     <%= form_for @answer, remote: true do |f|%>
     
     <%= f.text_area :content ,placeholder: "Write your answer", :class => 'a2', required: true%> <br>
@@ -250,9 +252,9 @@
 
 
     <div id="answer_<%=question.id%>">
-
+ <%@answer_feed=Answer.all.order(created_at: :desc)%>
     <% @answer_feed.each do |a| %>
-    <%= render 'answer',question_id: question.id,a: a %>
+    <%= render 'home/answer',question_id: question.id,a: a %>
     <% end %>
 
     </div>
@@ -270,14 +272,14 @@
 <% if question.answers.length != 0 %>
  <% question.status = 1 %>
       <%question.save%>
-<div class="question solved1">
+<div class="question solved1" id= "die_<%=question.id%>">
 
   <%end%>
 
 
 <% if question.answers.length == 0 %>
 
-<div class="question unsolved1">
+<div class="question unsolved1" id= "die_<%=question.id%>">
 
 <%end%>
   <div class="left">
@@ -306,11 +308,11 @@
 
 
     <% if question.answers.length != 0 %>
-      <div class="normal"><%= "STATUS: Solved" %></div>
+      <div class="normal" id="c_<%=question.id%>"><%= "STATUS: Solved" %></div>
 
 
     <% elsif question.answers.length == 0 %>
-      <div class="active"><%= "STATUS: Unsolved" %></div>
+      <div class="active" id="c_<%=question.id%>"><%= "STATUS: Unsolved" %></div>
     <% end %>
 
 
@@ -328,7 +330,8 @@
 
      </b>
     <br>
-       
+        <%@answer=Answer.new%>
+
     <%= form_for @answer, remote: true do |f|%>
     
     <%= f.text_area :content ,placeholder: "Write your answer", :class => 'a2', required: true%> <br>
@@ -343,9 +346,9 @@
 
 
     <div id="answer_<%=question.id%>">
-
+ <%@answer_feed=Answer.all.order(created_at: :desc)%>
     <% @answer_feed.each do |a| %>
-    <%= render 'answer',question_id: question.id,a: a %>
+    <%= render 'home/answer',question_id: question.id,a: a %>
     <% end %>
 
     </div>
@@ -364,14 +367,14 @@
 <% if question.answers.length != 0 %>
  <% question.status = 1 %>
       <%question.save%>
-<div class="question solved1">
+<div class="question solved1" id= "die_<%=question.id%>">
 
   <%end%>
 
 
 <% if question.answers.length == 0 %>
 
-<div class="question unsolved1">
+<div class="question unsolved1" id= "die_<%=question.id%>">
 
 <%end%>
 
@@ -401,11 +404,11 @@
 
 
     <% if question.answers.length != 0 %>
-      <div class="normal"><%= "STATUS: Solved" %></div>
+      <div class="normal" id="c_<%=question.id%>"><%= "STATUS: Solved" %></div>
 
 
     <% elsif question.answers.length == 0 %>
-      <div class="active"><%= "STATUS: Unsolved" %></div>
+      <div class="active" id="c_<%=question.id%>"><%= "STATUS: Unsolved" %></div>
     <% end %>
 
 
@@ -427,7 +430,8 @@
 
      </b>
     <br>
-       
+        <%@answer=Answer.new%>
+
     <%= form_for @answer, remote: true do |f|%>
     
     <%= f.text_area :content ,placeholder: "Write your answer", :class => 'a2', required: true%> <br>
@@ -442,9 +446,9 @@
 
 
     <div id="answer_<%=question.id%>">
-
+ <%@answer_feed=Answer.all.order(created_at: :desc)%>
     <% @answer_feed.each do |a| %>
-    <%= render 'answer',question_id: question.id,a: a %>
+    <%= render 'home/answer',question_id: question.id,a: a %>
     <% end %>
 
     </div>
@@ -461,19 +465,19 @@
 
 
 <!-- ################################################################### Extra case ###################################################################-->
-<% if current_user == question.user && (User.posts[current_user.post] == 0 || User.posts[current_user.post] == 2 || User.posts[current_user.post] == 3 || User.posts[current_user.post] == 4)%>
+<% if current_user == question.user && ((User.posts[current_user.post] == 0 && question.category != 1)|| (User.posts[current_user.post] == 2 &&question.category!=2) || (User.posts[current_user.post] == 3 && question.category!=3)|| (User.posts[current_user.post] == 4 &&question.category!=4))%>
 
 <% if question.answers.length != 0 %>
  <% question.status = 1 %>
       <%question.save%>
-<div class="question solved1">
+<div class="question solved1" id= "die_<%=question.id%>">
 
   <%end%>
 
 
 <% if question.answers.length == 0 %>
 
-<div class="question unsolved1">
+<div class="question unsolved1" id= "die_<%=question.id%>">
 
 <%end%>
   <div class="left">
@@ -502,11 +506,11 @@
 
 
     <% if question.answers.length != 0 %>
-      <div class="normal"><%= "STATUS: Solved" %></div>
+      <div class="normal" id="c_<%=question.id%>"><%= "STATUS: Solved" %></div>
 
 
     <% elsif question.answers.length == 0 %>
-      <div class="active"><%= "STATUS: Unsolved" %></div>
+      <div class="active" id="c_<%=question.id%>"><%= "STATUS: Unsolved" %></div>
     <% end %>
 
 
@@ -542,7 +546,7 @@
     
      <%@answer_feed=Answer.all.order(created_at: :desc)%>
     <% @answer_feed.each do |a| %>
-    <%= render 'answer',question_id: question.id,a: a %>
+    <%= render 'home/answer',question_id: question.id,a: a %>
     <% end %>
 
     </div>

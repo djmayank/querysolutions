@@ -15,6 +15,7 @@ class AnswersController < ApplicationController
         format.html { redirect_to @answer, notice: 'Answer was successfully created.' }
         format.json { render :show, status: :created, location: @answer }
       else
+        format.js{ }
         format.html { render :new }
         format.json { render json: @answer.errors, status: :unprocessable_entity }
       end
@@ -42,6 +43,7 @@ class AnswersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to answers_url, notice: 'Answer was successfully destroyed.' }
       format.json { head :no_content }
+      format.js{  }
     end
   end
 

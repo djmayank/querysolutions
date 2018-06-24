@@ -20,7 +20,7 @@ end
       if @question.save
         format.html { redirect_to '/', notice: 'Question was successfully created.' }
         format.json { render :show, status: :created, location: @question }
-      format.js{ }
+        format.js{ }
       else
         format.js{ }
         format.html { render :new }

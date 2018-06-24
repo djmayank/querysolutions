@@ -168,7 +168,7 @@
         <b>
             <div class="createQuestion">
           
-            <%= form_for @question do |f|%>
+            <%= form_for @question, remote: true do |f|%>
     
             <%= f.text_area :content ,placeholder: "What is your question?", :class => 'a1', required: true%> <br>
 
