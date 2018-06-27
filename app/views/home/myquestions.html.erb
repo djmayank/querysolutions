@@ -37,27 +37,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <section>
 
 
@@ -70,17 +49,7 @@
 <br><br><br>
 
 
-
-
-
-
-
-
-
-
-
-
-
+<div class="boox">
 
 <div class="header1">
 
@@ -101,7 +70,7 @@
 
 <%end%>
 
-
+</div>
 
 </div>
 
@@ -185,6 +154,22 @@ You joined us on <br><br><%=current_user.created_at.strftime("%b %d, %Y")%></str
 
 
 <style type="text/css">
+
+
+.boox{
+  background-color: #fff;
+  border-radius: 4px;
+  margin-top: 40px;
+  margin-left: 25%;
+  background-color:white;
+  box-shadow: 1px 1px 0 #f7f7f7;
+  border:2px solid #efefef ;
+  height: 90px;
+  width: 52%;
+  text-align: center;
+}
+
+
    .box{
   display: block;
   background-color: #fff;
@@ -203,7 +188,7 @@ You joined us on <br><br><%=current_user.created_at.strftime("%b %d, %Y")%></str
   padding-left: 20px;
   padding-top: 44px;
   font-size: 19px;
-  font-family: 'q_serif',Georgia,Times,"Times New Roman",serif;
+  font-family: Lato;
   color: #999;
     
 }
@@ -255,150 +240,6 @@ You joined us on <br><br><%=current_user.created_at.strftime("%b %d, %Y")%></str
 }
 
 
-<style>
-
-
-.modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    padding-top: 100px; 
-    left: 0;
-    top: 0;
-    width: 40%; 
-    height: 80%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
-
-}
-
-
-.modal-content {
-    position: relative;
-    background-color: white;
-    margin: auto;
-    padding: 0;
-    border: 1px none;
-    width: 50%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    margin-top: 200px;
-    animation-duration: 0.4s
-
-}
-
-
-@-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
-}
-
-@keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
-
-
-.close {
-    color: black;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal-header {
-    padding: 2px 16px;
-    background-color: #f6f6f6;
-    color: black;
-}
-
-.modal-body {padding: 2px 16px;}
-
-.modal-footer {
-    padding: 2px 16px;
-    background-color: #f6f6f6;
-    color: black;
-}
-
-
-
-
-
-
-
-</style>
-
-
-
-
-
-
-<script type="text/javascript">
-  
-  var modal = document.getElementById('myModal');
-
-
-var btn = document.getElementById("myBtn");
-
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-
-
-   }
-
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<style type="text/css">
 .button {
     background-color: #f1f8fb;
     border: 1px solid #bbcadc;
@@ -528,12 +369,6 @@ display: flex;
             
 
 
-
-
-
-
-
-
 .blink_me {
   animation: blinker 1s linear infinite;
 }
@@ -559,7 +394,7 @@ display: flex;
   margin-top: 20px;
   text-align: center;
   font-size: 35px;
-      font-family: 'Courier New';
+      font-family: Lato;
 
 
 }
@@ -578,7 +413,7 @@ display: flex;
       margin-left:125px;
         margin-top: 60px;
         font-size: 27px;
-      font-family: 'q_serif';
+      font-family: Lato;
 
 }
 
@@ -595,7 +430,7 @@ display: flex;
       margin-left:125px;
       margin-top: 60px;
       font-size: 20px;
-      font-family: 'q_serif';
+      font-family: Lato;
 
 }
 
@@ -705,7 +540,7 @@ display: flex;
   padding-left: 20px;
   padding-top: 44px;
   font-size: 19px;
-  font-family: 'q_serif',Georgia,Times,"Times New Roman",serif;
+  font-family: Lato;
   color: #999;
     
 }

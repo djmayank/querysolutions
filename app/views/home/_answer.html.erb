@@ -50,30 +50,38 @@
 
 
 
-
+<%if a.content.size >= 540 %>
 
 
 <div class="answerpart">
 
+<div class="content1">
 
+<div class="sidebar-box">
+<p>  <%= a.content %></p>
+  <p class="read-more no"><a href="#" id="butto" class="butto">Read More</a></p>
+</div>
+
+</div>
+
+</div>
+
+<% else %>
+
+<div class="answerpart">
 
 <div class="content1">
 
-
-
-<div class="readmore">
-
-<%= a.content %>
+<div class="sidebar-box">
+<p>  <%= a.content %></p>
 
 </div>
 
 </div>
 
-
-
 </div>
-
-
+	
+<%end %>
 	
 
 
@@ -92,37 +100,135 @@
 <style>
 
 
-
-
-.morecontent span {
-    display: none;
+.sidebar-box {
+  max-height: 90px;
+  position: relative;
+  overflow: hidden;
 }
-.morelink {
-    display: block;
+.sidebar-box .read-more { 
+  position: absolute; 
+  bottom: -25px; 
+  left: 0;
+  width: 100%; 
+  text-align: center; 
+  margin: 0; padding: 30px 0; 
+  z-index: 1;
+
+ 
+  background-image: linear-gradient(to bottom, transparent, #e3ecf9);
 }
 
 
-.readmore{
-	text-decoration-color: white;
+.butto {
+
+    background-color: #f1f8fb;
+    border: 1px solid #bbcadc;
+    border-radius: 4px;
+    color: #2b6dad;
+   margin: 4px 2px;
+    text-align: center;
+    text-decoration: none;
+    padding: 4px 15px;
+    font-size: 16px;
+    cursor: pointer;
+ width: 200px;
+  transition: all 0.5s;
+  margin: 5px;
 }
+
+.butto span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.butto span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.butto:hover {
+  background-color: #3e78ad;
+                    color: #ffffff;
+}
+
+.butto:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.butto:on click
+{
+  background-color: #de7462;
+}
+
 
 
 
 </style>
+
+
 <script>
 
-var lineHeight = 20;
-var numLines = 3;
-
-$('.readmore').readmore({
-	
-  speed: 1000,
-  collapsedHeight: lineHeight * numLines,
-  heightMargin: lineHeight * 1
-
-});
 
 
+var $el, $ps, $up, totalHeight;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$(".sidebar-box .butto").click(function() {
+      
+  totalHeight = 0
+
+  $el = $(this);
+  $p  = $el.parent();
+  $up = $p.parent();
+  $ps = $up.find("p:not('.read-more')");
   
+  // measure how tall inside should be by adding together heights of all inside paragraphs (except read-more paragraph)
+  $ps.each(function() {
+    totalHeight += $(this).outerHeight();
+  });
+        
+
+  $up
+    .css({
+      // Set height to prevent instant jumpdown when max height is removed
+      "height": $up.height(),
+      "max-height": 9999
+    })
+    .animate({
+      "height": totalHeight
+    });
+  
+  // fade out read-more
+  $p.fadeOut();
+  
+  // prevent jump-down
+  return false;
+});
 
 </script>
