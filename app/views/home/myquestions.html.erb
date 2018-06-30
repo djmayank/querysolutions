@@ -66,6 +66,8 @@
   <%if current_user%>
   <%=current_user.email%> asked <%=q.length%> question</div>
   <%end%>
+  <p>
+  Id created on <br><%=current_user.created_at%></p>
    </span></h3>
 
 <%end%>
@@ -77,19 +79,7 @@
 
 
 
-<div class="left">
 
-<nav1>
-
-<ul class="ul1">
-<li class="li1"><strong><%=current_user.email%></strong></li>
-<li class="li2"><p style="text-decoration:blink;">Id created on <br><%=current_user.created_at%></p></li>
-</ul>
-</nav1>
-
-
-
-</div>
 
 
 
@@ -317,7 +307,7 @@ display: flex;
 }
 .tv{
 
-  margin-top: -6%;
+  margin-top: 6%;
   margin-left: 5%;
 }
 .dropdown5 {
@@ -347,11 +337,6 @@ display: flex;
 
   margin-top: 8%;
 
-}
-
-
-.left{
-  margin-top:3%;
 }
 
      
@@ -398,41 +383,14 @@ display: flex;
 
 
 }
-.left{
-  display:flex;
 
-}
-   
-.ul1{
-  
-     }
-.li1{ 
-
-        font-size:14px;
-        list-style:none;
-      margin-left:125px;
-        margin-top: 60px;
-        font-size: 27px;
-      font-family: Lato;
-
-}
 
 .coverr{
          cursor: pointer;
          width:100%;
          height:100%;
      }
-       
-.li2{ 
-
-        
-      list-style:none;
-      margin-left:125px;
-      margin-top: 60px;
-      font-size: 20px;
-      font-family: Lato;
-
-}
+ 
 
 .allback{
   display: flex;

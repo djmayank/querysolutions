@@ -109,12 +109,14 @@
 
 
 <div class="box">
+  <div class="innerq">     <%=current_user.email%></div>
 
 <div id="myBtn" class="inner"><b>What is your query?</b></div>
 
 
 </div>
 <br><br><br>
+
 
 
 
@@ -126,6 +128,16 @@
   <% end %>
 
 </div>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -148,7 +160,26 @@
     
             <%= f.text_area :content ,placeholder: "What is your question?", :class => 'a1', required: true%> <br>
 
+
+
+
+      <%if current_user.post == 'member' %>
              <%= f.select(:category, options_for_select([['Category 1', 1], ['Category 2', 2], ['Category 3', 3], ['Category 4', 4]]),{ include_blank: false}, { :class => 'ar' }) %>
+      <%end%>
+
+      <%if current_user.post == 'solver4' %>
+             <%= f.select(:category, options_for_select([['Category 1', 1], ['Category 2', 2], ['Category 3', 3], ['Category 4', 4]], disabled: '4'),{ include_blank: false}, { :class => 'ar' }) %>
+      <%end%>
+
+      <%if current_user.post == 'solver1' %>
+             <%= f.select(:category, options_for_select([['Category 1', 1], ['Category 2', 2], ['Category 3', 3], ['Category 4', 4]], disabled: '1'),{ include_blank: false}, { :class => 'ar' }) %>
+      <%end%>
+      <%if current_user.post == 'solver2' %>
+             <%= f.select(:category, options_for_select([['Category 1', 1], ['Category 2', 2], ['Category 3', 3], ['Category 4', 4]], disabled: '2'),{ include_blank: false}, { :class => 'ar' }) %>
+      <%end%>
+      <%if current_user.post == 'solver3' %>
+             <%= f.select(:category, options_for_select([['Category 1', 1], ['Category 2', 2], ['Category 3', 3], ['Category 4', 4]], disabled: '3'),{ include_blank: false}, { :class => 'ar' }) %>
+      <%end%>
 
       
 
@@ -159,52 +190,29 @@
     <div class="modal-footer">
     <div class ="actions">
      <%= f.submit value:"Ask Question" ,:class => 'button'%>
-
-    
     </div>
   </div>
 
 </div>
-
-
-
 <%end%>
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -229,7 +237,7 @@
   display: block;
   background-color: #fff;
   border-radius: 4px;
-  margin-top: 40px;
+  margin-top: 61px;
   margin-left: 21%;
   background-color:white;
   box-shadow: 1px 1px 0 #f7f7f7;
@@ -242,7 +250,7 @@
 .inner{
     cursor: pointer;
   padding-left: 20px;
-  padding-top: 44px;
+  padding-top: 8px;
   font-size: 19px;
   font-family: Lato;
   color: #999;
@@ -251,6 +259,19 @@
 .inner:hover{
   color: #3068c1;
 }
+
+
+.innerq{
+  cursor: pointer;
+  padding-left: 3%;
+  padding-top: 3%;
+  font-size: 19px;
+  font-family: 'q_serif',Georgia,Times,"Times New Roman",serif;
+  color: #999;
+    
+}
+
+
 
 .a1{
     width: 96%;
