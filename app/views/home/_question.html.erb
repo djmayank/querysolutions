@@ -1,5 +1,5 @@
 
-<!-- ###################################################################solver 1###################################################################-->
+<!-- ###################################################################solver 1##################################################################-->
 <% if User.posts[current_user.post] == 0 && question.category == 1 %>
 
 <% if question.answers.length != 0 %>
@@ -58,7 +58,39 @@
     </div>
 
     <div class= "category">
-      <%= question.category %>
+     
+
+
+
+
+
+
+
+
+      <% if(question.category == 1) %>
+      <b>Category 1 </b>
+      <% end %>
+
+      <% if(question.category == 2) %>
+      <b>Category 2 </b>
+      <% end %>
+
+      <% if(question.category == 3) %>
+      <b>Category 3 </b>
+      <% end %>
+
+      <% if(question.category == 4) %>
+      <b>Category 4 </b>
+      <% end %>
+
+
+
+
+
+
+
+
+
     </div>
 
      </b>
@@ -150,7 +182,24 @@
     </div>
 
     <div class= "category">
-      <%= question.category %>
+      
+
+
+      <% if(question.category == 1) %>
+      <b>Category 1 </b>
+      <% end %>
+
+      <% if(question.category == 2) %>
+      <b>Category 2 </b>
+      <% end %>
+
+      <% if(question.category == 3) %>
+      <b>Category 3 </b>
+      <% end %>
+
+      <% if(question.category == 4) %>
+      <b>Category 4 </b>
+      <% end %>
     </div>
 
      </b>
@@ -231,7 +280,24 @@
     </div>
 
     <div class= "category">
-      <%= question.category %>
+      
+
+
+      <% if(question.category == 1) %>
+      <b>Category 1 </b>
+      <% end %>
+
+      <% if(question.category == 2) %>
+      <b>Category 2 </b>
+      <% end %>
+
+      <% if(question.category == 3) %>
+      <b>Category 3 </b>
+      <% end %>
+
+      <% if(question.category == 4) %>
+      <b>Category 4 </b>
+      <% end %>
     </div>
 
      </b>
@@ -325,7 +391,24 @@
     </div>
 
     <div class= "category">
-      <%= question.category %>
+      
+
+
+      <% if(question.category == 1) %>
+      <b>Category 1 </b>
+      <% end %>
+
+      <% if(question.category == 2) %>
+      <b>Category 2 </b>
+      <% end %>
+
+      <% if(question.category == 3) %>
+      <b>Category 3 </b>
+      <% end %>
+
+      <% if(question.category == 4) %>
+      <b>Category 4 </b>
+      <% end %>
     </div>
 
      </b>
@@ -425,7 +508,26 @@
     </div>
 
     <div class= "category">
-      <%= question.category %>
+     
+
+
+      <% if(question.category == 1) %>
+      <b>Category 1 </b>
+      <% end %>
+
+      <% if(question.category == 2) %>
+      <b>Category 2 </b>
+      <% end %>
+
+      <% if(question.category == 3) %>
+      <b>Category 3 </b>
+      <% end %>
+
+      <% if(question.category == 4) %>
+      <b>Category 4 </b>
+      <% end %>
+
+
     </div>
 
      </b>
@@ -522,7 +624,24 @@
     </div>
 
     <div class= "category">
-      <%= question.category %>
+      
+
+
+      <% if(question.category == 1) %>
+      <b>Category 1 </b>
+      <% end %>
+
+      <% if(question.category == 2) %>
+      <b>Category 2 </b>
+      <% end %>
+
+      <% if(question.category == 3) %>
+      <b>Category 3 </b>
+      <% end %>
+
+      <% if(question.category == 4) %>
+      <b>Category 4 </b>
+      <% end %>
     </div>
 
      </b>
@@ -725,8 +844,6 @@ li.hello2{
 }
 
 .date1{
-
-  
   font-size: 12px;
   font-color: grey;
 }
@@ -737,7 +854,6 @@ li.hello2{
   line-height: 96%;
   font-size: 21px;
   font-family: Lato;
-
 }
 
 
@@ -748,36 +864,25 @@ li.hello2{
 
 }
 .show1{
-        margin-top: 5px;
-        border:2px solid #efefef ;
-               display: relative;
-               
-        width: 90%;
-                background-color: #E3ECF8;
-               box-shadow: 1px 1px 0 #f7f7f7;
-                padding: 12px;
-
-               margin-left: 0px;
-
-               
-          height: auto;
-          word-break: break-word;
+  margin-top: 5px;
+  border:2px solid #efefef ;
+  display: relative;
+  width: 90%;
+  background-color: #E3ECF8;
+  box-shadow: 1px 1px 0 #f7f7f7;
+  padding: 12px;
+  margin-left: 0px;
+  height: auto;
+  word-break: break-word;
   }
-
-
-  
-
-
 .a2{
-                    width: 100%;
-                    height: 60%;
-                    padding-left: 4px;
-                    padding-top: 4px;
-                    
-                    border: 2px solid grey; 
-                    }
-
-
+  width: 100%;
+  height: 60%;
+  padding-left: 4px;
+  padding-top: 4px;
+  margin-top: 2%;
+  border: 2px solid grey; 
+}
 .normal {
   color: #63ea11;
 }
@@ -785,7 +890,6 @@ li.hello2{
   color: #b30000;
   
 }
-
 .question.unsolved1{
   border: 3px solid #b30000;
 }
@@ -794,7 +898,12 @@ li.hello2{
   border: 3px solid #63ea11;
 }
 
-
+.category
+{
+  display: flex;
+  margin-top: -7%;
+  margin-left: 90%;
+}
 </style>
 
 

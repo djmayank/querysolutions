@@ -1,37 +1,20 @@
 <%if a.question_id == question_id %>
 
-<div class="show1">
-
-
-
-		
+<div class="show1">	
 <div class="temp">
 <div class="left">
 		<div class="userImage">
-		
-
-
 </div>
 </div>
-
 <ul class="hello1">
 <li class="hello2">
 <div class="userDetail">
 		<b>
 		<%= a.user.email %>
 		</b>
-
 </div>
-
-
-
 </li>
-
-
-
-
 <li class="hello2">
-
 		<br>
  <div class="date1">
 <% if a.created_at > Time.now.beginning_of_day %>
@@ -41,37 +24,23 @@
 <% end %>
 </div>
 <br>
-
 </div>
-
 </li>
 </ul>
-
-
-
-
 <%if a.content.size >= 540 %>
-
-
 <div class="answerpart">
-
 <div class="content1">
-
 <div class="sidebar-box">
 <p>  <%= a.content %></p>
   <p class="read-more no"><a href="#" id="butto" class="butto">Read More</a></p>
 </div>
-
 </div>
-
 </div>
 
 <% else %>
 
 <div class="answerpart">
-
 <div class="content1">
-
 <div class="sidebar-box">
 <p>  <%= a.content %></p>
 
@@ -166,57 +135,26 @@
   background-color: #de7462;
 }
 
-
-
-
 </style>
 
 
 <script>
 
-
-
 var $el, $ps, $up, totalHeight;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 $(".sidebar-box .butto").click(function() {
       
   totalHeight = 0
-
   $el = $(this);
   $p  = $el.parent();
   $up = $p.parent();
   $ps = $up.find("p:not('.read-more')");
-  
-  // measure how tall inside should be by adding together heights of all inside paragraphs (except read-more paragraph)
   $ps.each(function() {
     totalHeight += $(this).outerHeight();
-  });
-        
-
+  });    
   $up
     .css({
-      // Set height to prevent instant jumpdown when max height is removed
+      
       "height": $up.height(),
       "max-height": 9999
     })
@@ -224,10 +162,8 @@ $(".sidebar-box .butto").click(function() {
       "height": totalHeight
     });
   
-  // fade out read-more
   $p.fadeOut();
   
-  // prevent jump-down
   return false;
 });
 
