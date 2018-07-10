@@ -1,156 +1,59 @@
 
 
 <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
-
-
-
 <% if User.posts[current_user.post] == 1%>
-
-
 <header>
-
 <div class="logo">
 <%= image_tag 'images.png' %>
 </div>
-
-
-
-
 <font color="#9f9f9f" size="7">
 <nav>
-
 <ul>
 <li>  <%= link_to "Home",home_index_path,method: :get%> </li>
-
-
 <li> <%= link_to "Sign Out",destroy_user_session_path,method: :delete ,data: { confirm: "Are you sure?"}%></li>
-
 </ul>
 </nav>
-
 </font>
 </header>
-
-
 <%end%>
-
-
-
-
-
 <% if User.posts[current_user.post] != 1%>
-
-
 <header>
-
-<div class="logo">
+  <div class="logo">
 <%= image_tag 'images.png' %>
 </div>
-
-
-
-
 <font color="#9f9f9f" size="7">
 <nav>
-
 <ul>
 <li> <%= link_to "Home",home_index_path,method: :get%> </li>
 <li><%= link_to "My Questions", myquestions_path,method: :get %></li>
-
 <li> <%= link_to "Sign Out",destroy_user_session_path,method: :delete ,data: { confirm: "Are you sure?"}%></li>
-
 </ul>
 </nav>
-
 </font>
 </header>
-
-
 <%end%>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <main>
-  
-
-
-
-
 <aside>
-
 </aside>
-
-
-
-
-
 <section>
-
-
-
-
 <br><br>
-
-
-
 <div class="box">
-  <div class="innerq">     <%=current_user.email%></div>
-
+<div class="innerq">     <%=current_user.email%></div>
 <div id="myBtn" class="inner"><b>What is your query?</b></div>
-
-
 </div>
 <br><br><br>
-
-
-
-
 <div id="questions">
-
 <% @question_feed.each do |question| %>
-
 <%= render 'question', question: question %>
   <% end %>
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div id="myModal" class="modal">
 
   <!-- Modal content -->
   <div class="modal-content">
     <div class="modal-header">
-      <span class="close">&times;</span>
-      
+      <span class="close">&times;</span>      
     </div>
- 
-
     <div class="modal-body">
       <p>
         <b>
@@ -159,18 +62,12 @@
             <%= form_for @question, remote: true do |f|%>
     
             <%= f.text_area :content ,placeholder: "What is your question?", :class => 'a1', required: true%> <br>
-
-
-
-
-      <%if current_user.post == 'member' %>
+<%if current_user.post == 'member' %>
              <%= f.select(:category, options_for_select([['Category 1', 1], ['Category 2', 2], ['Category 3', 3], ['Category 4', 4]]),{ include_blank: false}, { :class => 'ar' }) %>
       <%end%>
-
       <%if current_user.post == 'solver4' %>
              <%= f.select(:category, options_for_select([['Category 1', 1], ['Category 2', 2], ['Category 3', 3], ['Category 4', 4]], disabled: '4'),{ include_blank: false}, { :class => 'ar' }) %>
       <%end%>
-
       <%if current_user.post == 'solver1' %>
              <%= f.select(:category, options_for_select([['Category 1', 1], ['Category 2', 2], ['Category 3', 3], ['Category 4', 4]], disabled: '1'),{ include_blank: false}, { :class => 'ar' }) %>
       <%end%>
@@ -388,8 +285,6 @@
     background-color: rgba(0,0,0,0.4); 
 
 }
-
-
 .modal-content {
     position: relative;
     background-color: white;
@@ -405,8 +300,6 @@
     animation-duration: 0.4s
 
 }
-
-
 @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 
     to {top:0; opacity:1}
@@ -445,20 +338,7 @@
     background-color: #f6f6f6;
     color: black;
 }
-
-
-
-
-
-
-
 </style>
-
-
-
-
-
-
 <script type="text/javascript">
   
   var modal = document.getElementById('myModal');

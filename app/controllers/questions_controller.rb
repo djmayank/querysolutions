@@ -6,6 +6,7 @@ class QuestionsController < ApplicationController
   def edit
 
    @question = Question.find(params[:id])
+
    respond_to do |format|
    format.js { }
   end
